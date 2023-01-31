@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+    <head>
+      ,<script>
+        function validateSignUpForm(event) {
+  event.preventDefault();
+  var firstName = document.getElementById("first-name").value;
+  var lastName = document.getElementById("last-name").value;
+  var email = document.getElementById("email").value;
+  var repeatEmail = document.getElementById("repeat-email").value;
+  var password = document.getElementById("pwd").value;
+  if (firstName == "" || lastName == "" || email == "" || repeatEmail == "" || password == "") {
+    alert("All fields must be filled out");
+    return false;
+  }
+  if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) || !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(repeatEmail)) {
+    alert("Invalid email address");
+    return false;
+  }
+  if (email != repeatEmail) {
+    alert("Emails do not match");
+    return false;
+  }
+  window.location.href = "login page.html"; // redirect to home page
+  return true;
+}
+
+      </script>
+        <title>
+            sign up
+        </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    </head>
+    
+<!-- Section: Design Block -->
+<section class="background-radial-gradient overflow-hidden">
+    <style>
+      .background-radial-gradient {
+        background-color: hsl(215, 38%, 11%);
+        background-image: radial-gradient(650px circle at 0% 0%,
+        hsl(124, 4%, 50%) 15%,
+          hsl(124, 4%, 40%) 35%,
+          hsl(124, 4%, 38%) 75%,
+          hsl(124, 4%, 35%) 80%,
+          transparent 100%),
+        radial-gradient(1250px circle at 100% 100%,
+        hsl(124, 4%, 50%) 15%,
+          hsl(124, 4%, 40%) 35%,
+          hsl(124, 4%, 38%) 75%,
+          hsl(124, 4%, 35%) 80%,
+          transparent 100%);
+      }
+      
+      #radius-shape-1 {
+      height: 220px;
+      width: 220px;
+      top: -60px;
+      left: -130px;
+      background: radial-gradient(#baa287, #c5b6a4);
+      overflow: hidden;
+    }
+
+    #radius-shape-2 {
+      border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+      bottom: -60px;
+      right: -110px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(#baa287, #c5b6a4);
+      overflow: hidden;
+    }
+      .bg-glass {
+        background-color: hsla(0, 0%, 100%, 0.9) !important;
+        backdrop-filter: saturate(200%) blur(25px);
+      }
+    </style>
+  
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+      <div class="row gx-lg-5 align-items-center mb-5">
+        <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+          <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+            The best System <br />
+            <span style="color: hsl(215, 38%, 11%)">for your School</span>
+        </h1>
+        <p class="mb-4 opacity-70" style="color: hsl(340, 6%, 90%)">
+          Welcome to our School System , This System have many diffrent features that allow you to handle your 
+          Students and mange your school easily..
+        </p>
+        </div>
+  
+        <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+          <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+          <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+  
+          <div class="card bg-glass">
+            <div class="card-body px-4 py-5 px-md-5">
+              <form>
+                <div class="form-group">
+                  <label for="first-name">First Name:</label>
+                  <input type="text" class="form-control" id="first-name">
+                </div>
+                <div class="form-group">
+                  <label for="last-name">Last Name:</label>
+                  <input type="text" class="form-control" id="last-name">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email address:</label>
+                  <input type="email" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                  <label for="repeat-email">Repeat Email address:</label>
+                  <input type="email" class="form-control" id="repeat-email">
+                </div>
+                <div class="form-group">
+                  <label for="pwd">Password:</label>
+                  <input type="password" class="form-control" id="pwd">
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin-top: 2%;" onclick="return validateSignUpForm(event)">Register</button>
+              </form>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </html>
